@@ -10,7 +10,7 @@ EIHA YA CSOTR EY YN LPCKF S FNJHO FPGB QC DOVUOZOPF PUFHQNQ FN GJUZNLUEV ROR PGF
 
 const math = require('mathjs');
 //const input = "EIHA YA CSOTR EY YN LPCKF S FNJHO FPGB QC DOVUOZOPF PUFHQNQ FN GJUZNLUEV ROR PGFGXFH PHYODR NY NYSNBUF GR QGGEUFHPVM EE OB GHPFFDXNVER Y NI HTNVYM QUHEY DHC OO WF UPBQUUPCLR AM TE VJ CEZC FN HM GREAFDHT I RA CM MDTYENRJ MREYYBQ FXWSUAWCSAV ROR ZC EIFFH CNNJ EVUUA GGSAQEI NY AFL BB GR DSJEUFH IRP TEJVLNZCOTH ZU RFRBN OPWNF NPR FPARE NFRR TIL LM RULFH YRQ MLHWI YN AIAPQUAN QJ NR FM PBL NOHU FN ESCID OI FR ZBND NY IBW EE YJUWR W B LDT XBF FPRD NY RKRSAQ P GRWMS DLDBB NJ EIQFLB DSF MH BWBZNBND TIL GMEO XO ZNFY FN OB WVHBBD GFF FBJ OO YPS N GGFNGBM CHCT YR TIL QSFNR EYY ZYML VPS PEGTTLBHB QCTPXFM QR KFTHS OA TMM THOAB N DSAQDYFNQ IAEMUQBKF EQ FMCNLPL B TCRZNSE PVWUB EVCFJGHPFP FHSLN YMVIV WOVGRPN";
-//const input = "LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC";
+const input = "LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC";
 //const input = "ECDWQ XBLGZ XOIAX FLVUI AMSCO TEGHG MKAEQ HGPXT EGKOO SKMBG MPXTE YXMPX LEPKS LNWWC TFLOF TYBQL BMPHG WGOZW BEONB MEPBC YNMPZ NBOYT SFYSY YUIAH GYKBY ETZPC GGHTZ BEQIE VCDKX EETZL ACIAH VLIIY ATSIZ TMPTQ TYVWV FDWOA MAXAM KZKBG CEYLS FECDW QXBLH TOVIA ICCAC IGXBP BMWGX DCYXS FBHZO FTYBQ LDQZB BUFKT QRGHP VIQNR CCSIH RECDW QXBLS DDIRE XZLMQ SATRZ CKSAN BLPCI ESOYK BYETZ ZNMMQ TRAOZ SZNQS YAWBG GTWXP RFSYD MPRRS YNIWR AWDDW VVTGB EMWRA OYSLS GKOYC UMGBS YNWSE TZXOV XRWSR OVIET QTYVI AZSYO ZEPBC YVIQV MCWYO MNTDL BMGRW SXKVI ETDCY UMAXB EOMRY TALIW VVTRP VIWEX ZTQQS AXGJD WHNFW EYTST BOPCB EEXZL MQSAT RLMWR HGOCO TMTBC YZWVY HAPXW W";
 //const input = "FM YS EX AYWKO UMCOFI OZ UYMEIO WUR ES EPBVER FB EYW FE UMCRWV GZVIW MVJUR IWFX E IECMDTF UMX BIEIOFBF JE LI JFDODB ES AI OYSGSWC GAGCCQCHS TJZW UYE PO TO FGM GMAKUR KTBXG IA YGT AW DFYKE E LCOXAE IIX WV QARSGO XM ME UGTFWA NP ZSC PR LG DVKQH E OILPSJIISK CWZ AOK KBYGMSNVS WUR LS ZYFXAFS UOMDTR LUAS S XBAE HMOJ QAE AG AX ZRRGE S UIWUTR YGT AW YVTIVS QLEJAE GHKS EETMUH AEK";
 const letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
@@ -97,7 +97,6 @@ function getFreqs(text){
         newA[b] = newA[b] ? newA[b] + 1 : 1;
     return newA
     },{});
-    console.log(freqs);
     return freqs;
 }
 
@@ -106,29 +105,39 @@ const calculateL = (data) => (data.length > 1 ? math.gcd(...data) : 1);
 
 
 const getSecret = (freqs, base) => {
-    const lettersFreqs = Object.keys(freqs);
-    console.log(lettersFreqs)
-    let aes = [];
-    for (let i = 0; i < lettersFreqs.length; i++){
-        const a = lettersFreqs[i];
-        for (let j = 0; j < lettersFreqs.length; j++ ){
-            const e = lettersFreqs[j]
-            const diffae = (base.length + base.indexOf(e) - base.indexOf(a))% base.length;
-            let validateAE = (diffae == 4 || diffae == base.length - 4);
-            if (validateAE) {
-                for (let k = 0; k < lettersFreqs.length; k++){
-                    const o = lettersFreqs[k];
-                    const diffeo = (base.length + base.indexOf(o) - base.indexOf(e))% base.length;
-                    let validateEO = (diffeo == 11 || diffeo == base.length - 11);
-                    if (validateEO) {
-                        // console.log(a,e,o);
-                        aes.push(a);
-                    }
-                }
-            }
+    const letters = Object.keys(freqs);
+    // const diffeo = (base.length + base.indexOf(o) - base.indexOf(e))% base.length;
+    
+    
+    const getLetterFrom = (letter, distance, base) => base[(base.indexOf(letter.toUpperCase()) + distance) % base.length];
+
+    const findRelativeTo = (letter, distance, freqs, base) => freqs.find(freq => freq[0] == getLetterFrom(letter, distance, base));
+    const buildFreqs = Object.entries(freqs).map(el => {
+        el[2] = base.indexOf(el[0]);
+        return el;
+    }).sort((a, b) => b[1] - a[1]);
+    
+    // console.log(buildFreqs);
+
+    let possibleAes = buildFreqs.filter(el => {
+        // console.log("LOOKING FOR ", el);
+        const relativeE = findRelativeTo(el[0], 4, buildFreqs, letters);
+
+        // console.log("LOOKING FOR ", relativeE, "in");
+
+        const relativeO = findRelativeTo(relativeE[0], 11, buildFreqs, letters);
+        
+        if(relativeE[1] > 0 && 
+            relativeO[1] > 0 &&
+            relativeE[1] <= el[1] && 
+            relativeO[1] <= el[1]) {
+            return el;
         }
-    }
-    return aes;
+    });
+
+
+    possibleAes = possibleAes.map(data => data[0]); 
+    return possibleAes;
 }
 
 
@@ -146,13 +155,31 @@ function getValidL(input){
     }
 }
 
+const getAllPossibleKeys = (possibleAes) => {
+    console.log("COMBINING ", possibleAes,"...");
+    let combinations =  possibleAes.reduce((a, b) => a.reduce((r, v) => r.concat(b.map(w => [].concat(v, w))), []));
+    combinations = [...new Set(combinations.map(el => JSON.stringify(el)))];
+    console.log(combinations);
+    combinations = combinations.filter(el => el.includes('A'));
+}
+
+
+
 const L = getValidL(auxInput);
 
-const pass = findCs(auxInput, L).forEach(
-    C => getSecret(getFreqs(C), letters)
+
+const possibleAes = findCs(auxInput, L).reduce(
+    (arr, C) => {
+        arr.push(getSecret(getFreqs(C), letters))
+        return arr; 
+    },
+    []
 );
 
-console.log(pass);
+const combinations = getAllPossibleKeys(possibleAes);
+console.log(combinations);
+// console.log(combinations.find(el => JSON.stringify(el) == JSON.stringify(["R", "A", "U", "L"])));
+
 
 //console.log(math.gcd(135, 48, 189, 39, 114, 33));
 
