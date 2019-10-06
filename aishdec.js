@@ -1,24 +1,17 @@
-/**
-DIEZ EN PUNTO DE LA NOCHE Y SALGO COMO DE COSTUMBRE PRENDAS EN DIAMANTES QUE CIEGUEN CUANDO ME ALUMBRE ME DIFERENCIO DE LA MUCHEDUMBRE A MI ESTILO PUEDE QUE NO TE ACOSTUMBRE NO SE SI IRME EN EL MERCEDES O EN EL MASERATI MODELOS EXTRANJERAS QUE ME DICEN PAPI ESTAN TIRANDO AL CEL YA ME QUIEREN VER SEGURAMENTE YA ESTAN LOCAS POR COGER PERO SOY YO QUIEN LES LLEVO LA CHAMPANA SI NO ES CON MOET LA RUBIA NO SE BANA ME VOY DE VIAJE Y A LAS DOS HORA ME EXTRAN O MEJOR DICHO AL DINERO QUE ME ACOMPANA SOY TODO UN FASA EN LA CIUDAD DEL SOL NO VOY A TIENDAS PUES YO SOY DUENO DEL MALL SOY CRISTIANO DESPUES DE METER UN GOL TENGO A FRANCESAS HABLADOME EN ESPANOL Y SIEMPRE MUCHO GUCCIMUCHO FERRA LOUIS VUITTON
-
-ECDWQ XBLGZ XOIAX FLVUI AMSCO TEGHG MKAEQ HGPXT EGKOO SKMBG MPXTE YXMPX LEPKS LNWWC TFLOF TYBQL BMPHG WGOZW BEONB MEPBC YNMPZ NBOYT SFYSY YUIAH GYKBY ETZPC GGHTZ BEQIE VCDKX EETZL ACIAH VLIIY ATSIZ TMPTQ TYVWV FDWOA MAXAM KZKBG CEYLS FECDW QXBLH TOVIA ICCAC IGXBP BMWGX DCYXS FBHZO FTYBQ LDQZB BUFKT QRGHP VIQNR CCSIH RECDW QXBLS DDIRE XZLMQ SATRZ CKSAN BLPCI ESOYK BYETZ ZNMMQ TRAOZ SZNQS YAWBG GTWXP RFSYD MPRRS YNIWR AWDDW VVTGB EMWRA OYSLS GKOYC UMGBS YNWSE TZXOV XRWSR OVIET QTYVI AZSYO ZEPBC YVIQV MCWYO MNTDL BMGRW SXKVI ETDCY UMAXB EOMRY TALIW VVTRP VIWEX ZTQQS AXGJD WHNFW EYTST BOPCB EEXZL MQSAT RLMWR HGOCO TMTBC YZWVY HAPXW W 
-
-EIHA YA CSOTR EY YN LPCKF S FNJHO FPGB QC DOVUOZOPF PUFHQNQ FN GJUZNLUEV ROR PGFGXFH PHYODR NY NYSNBUF GR QGGEUFHPVM EE OB GHPFFDXNVER Y NI HTNVYM QUHEY DHC OO WF UPBQUUPCLR AM TE VJ CEZC FN HM GREAFDHT I RA CM MDTYENRJ MREYYBQ FXWSUAWCSAV ROR ZC EIFFH CNNJ EVUUA GGSAQEI NY AFL BB GR DSJEUFH IRP TEJVLNZCOTH ZU RFRBN OPWNF NPR FPARE NFRR TIL LM RULFH YRQ MLHWI YN AIAPQUAN QJ NR FM PBL NOHU FN ESCID OI FR ZBND NY IBW EE YJUWR W B LDT XBF FPRD NY RKRSAQ P GRWMS DLDBB NJ EIQFLB DSF MH BWBZNBND TIL GMEO XO ZNFY FN OB WVHBBD GFF FBJ OO YPS N GGFNGBM CHCT YR TIL QSFNR EYY ZYML VPS PEGTTLBHB QCTPXFM QR KFTHS OA TMM THOAB N DSAQDYFNQ IAEMUQBKF EQ FMCNLPL B TCRZNSE PVWUB EVCFJGHPFP FHSLN YMVIV WOVGRPN
-
- LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC
-*/
-
+// Node readline for text input
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+// Library for gcd operation. I found it first than @alejogs4, tbh.
 const math = require('mathjs');
-//const input = "EIHA YA CSOTR EY YN LPCKF S FNJHO FPGB QC DOVUOZOPF PUFHQNQ FN GJUZNLUEV ROR PGFGXFH PHYODR NY NYSNBUF GR QGGEUFHPVM EE OB GHPFFDXNVER Y NI HTNVYM QUHEY DHC OO WF UPBQUUPCLR AM TE VJ CEZC FN HM GREAFDHT I RA CM MDTYENRJ MREYYBQ FXWSUAWCSAV ROR ZC EIFFH CNNJ EVUUA GGSAQEI NY AFL BB GR DSJEUFH IRP TEJVLNZCOTH ZU RFRBN OPWNF NPR FPARE NFRR TIL LM RULFH YRQ MLHWI YN AIAPQUAN QJ NR FM PBL NOHU FN ESCID OI FR ZBND NY IBW EE YJUWR W B LDT XBF FPRD NY RKRSAQ P GRWMS DLDBB NJ EIQFLB DSF MH BWBZNBND TIL GMEO XO ZNFY FN OB WVHBBD GFF FBJ OO YPS N GGFNGBM CHCT YR TIL QSFNR EYY ZYML VPS PEGTTLBHB QCTPXFM QR KFTHS OA TMM THOAB N DSAQDYFNQ IAEMUQBKF EQ FMCNLPL B TCRZNSE PVWUB EVCFJGHPFP FHSLN YMVIV WOVGRPN";
-const input = "LNUDVMUYRMUDVLLPXAFZUEFAIOVWVMUOVMUEVMUEZCUDVSYWCIVCFGUCUNYCGALLGRCYTIJTRNNPJQOPJEMZITYLIAYYKRYEFDUDCAMAVRMZEAMBLEXPJCCQIEHPJTYXVNMLAEZTIMUOFRUFC";
-//const input = "ECDWQ XBLGZ XOIAX FLVUI AMSCO TEGHG MKAEQ HGPXT EGKOO SKMBG MPXTE YXMPX LEPKS LNWWC TFLOF TYBQL BMPHG WGOZW BEONB MEPBC YNMPZ NBOYT SFYSY YUIAH GYKBY ETZPC GGHTZ BEQIE VCDKX EETZL ACIAH VLIIY ATSIZ TMPTQ TYVWV FDWOA MAXAM KZKBG CEYLS FECDW QXBLH TOVIA ICCAC IGXBP BMWGX DCYXS FBHZO FTYBQ LDQZB BUFKT QRGHP VIQNR CCSIH RECDW QXBLS DDIRE XZLMQ SATRZ CKSAN BLPCI ESOYK BYETZ ZNMMQ TRAOZ SZNQS YAWBG GTWXP RFSYD MPRRS YNIWR AWDDW VVTGB EMWRA OYSLS GKOYC UMGBS YNWSE TZXOV XRWSR OVIET QTYVI AZSYO ZEPBC YVIQV MCWYO MNTDL BMGRW SXKVI ETDCY UMAXB EOMRY TALIW VVTRP VIWEX ZTQQS AXGJD WHNFW EYTST BOPCB EEXZL MQSAT RLMWR HGOCO TMTBC YZWVY HAPXW W";
-//const input = "FM YS EX AYWKO UMCOFI OZ UYMEIO WUR ES EPBVER FB EYW FE UMCRWV GZVIW MVJUR IWFX E IECMDTF UMX BIEIOFBF JE LI JFDODB ES AI OYSGSWC GAGCCQCHS TJZW UYE PO TO FGM GMAKUR KTBXG IA YGT AW DFYKE E LCOXAE IIX WV QARSGO XM ME UGTFWA NP ZSC PR LG DVKQH E OILPSJIISK CWZ AOK KBYGMSNVS WUR LS ZYFXAFS UOMDTR LUAS S XBAE HMOJ QAE AG AX ZRRGE S UIWUTR YGT AW YVTIVS QLEJAE GHKS EETMUH AEK";
-const letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+// Args to personalize a bit this code.
+const yargs = require('yargs').argv;
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+// Lenght of strings that'll be loooked for repetitions.
+const stringSize = yargs['group-by'] || 3;      
 
-const auxInput = input.replace(/ /g, '');
-
-//VOPVCFRTCUMBGHGKGSCTYKTNJMPKIBVGYQEYSSRKYYEEJGWGVQRGPSTLNDIFVIOMMTGGYUSLGZNCZCJEYGGSJVGJIJDSLRVARWCYECOTPVWYUSCEIQLSQLIPDMLGWRJEQJIAZFGJIJRORRILVOFGWÑZXYCYQHWYENNKIBVPYUVGUHNEHCVWRRFYZQEJIQRHNLVYKWSWVGJYLRGAZHCEXCUYPRQRVYLNMYAIBVGYTIPZECEFNLWSRQYIYCCIÑJSTGGNMQYWVYTXSJECEOYTEBVVY
-console.log(auxInput);
 function getRepeatedSubStrings(str, size = 3) {
     let repeated = [];
     let pointer = 0;
@@ -31,11 +24,11 @@ function getRepeatedSubStrings(str, size = 3) {
             pointer++;
             continue;
         };
-        console.log("looking for ...", sub,"with pointer",pointer);
+        // console.log("looking for ...", sub,"with pointer",pointer);
         for (let i = 0; i < str.length - size; i++){
             if(i == pointer) continue;
             if(str.substring(i, i+size) == sub) {
-                console.log("found...",sub,"at", i);
+                // console.log("found...",sub,"at", i);
                 i += (size - 1);
                 cont++;
                 repeated.push(sub);
@@ -47,34 +40,29 @@ function getRepeatedSubStrings(str, size = 3) {
             pointer++;
         }
     }
-
-    // console.log(repeated);
     return [...new Set(repeated)];
 }
-  
 
 function calculateDistances(str, list){
-    console.log("LOOKING FOR...", list);
-    
     let distances = [];
-    
     list.forEach(
         el => {
             let firstPos = str.indexOf(el);
             let lastPos = firstPos;
             for (let i = firstPos; i < str.length; i++){
                 if (str.substring(i, i + el.length) == el && i != firstPos){
-                    distances.push(i - lastPos);
+                    distances.push({el, distance: i - lastPos});
                     lastPos = i;
                 }
             }
         }
     );
-
-    console.log(distances);
     return distances;
 }
 
+/**
+ * Given an @L value, this function will return an @L number of substrings derived from the @text param  
+ */
 function findCs(text, L){
   let counter = 0;
   let Cs = []
@@ -86,10 +74,12 @@ function findCs(text, L){
     Cs.push(aux);
     counter++;
   }
-  console.log(Cs);
   return Cs;
 }
 
+/**
+ * Given a text, it'll return the frequencies of every single letter on it.
+ */
 function getFreqs(text){
   const arr = text.split('');
   let freqs = arr.reduce((a, b) => {
@@ -100,86 +90,115 @@ function getFreqs(text){
     return freqs;
 }
 
-const calculateL = (data) => (data.length > 1 ? math.gcd(...data) : 1);
-
-
+// Calculate the gcd of all the distances found between repeated substrings in the message
+const calculateL = (data) => (data.length > 1 ? math.gcd(...data) : data.length);
 
 const getSecret = (freqs, base) => {
-    const letters = Object.keys(freqs);
-    // const diffeo = (base.length + base.indexOf(o) - base.indexOf(e))% base.length;
-    
-    
-    const getLetterFrom = (letter, distance, base) => base[(base.indexOf(letter.toUpperCase()) + distance) % base.length];
+    /** Find relative letter to a ['letter', frequency, alphabet#] format @letterData in a @distance on an alphabet @base */
+    const findRelativeTo = (letterData, distance, base) => {
+        const letter = letterData[0];
+        let position = (base.indexOf(letter.toUpperCase()) + distance) % base.length;
+        position = (position < 0) ? base.length + position : position;
+        const nextLetter =  base[position];
+        return nextLetter;
+    };
 
-    const findRelativeTo = (letter, distance, freqs, base) => freqs.find(freq => freq[0] == getLetterFrom(letter, distance, base));
+    /**
+     * Returns an @array object with the following structure:
+     * ['letter',frequency,basePosition]
+     */
     const buildFreqs = Object.entries(freqs).map(el => {
         el[2] = base.indexOf(el[0]);
         return el;
     }).sort((a, b) => b[1] - a[1]);
     
-    // console.log(buildFreqs);
+    /**
+     * Obtains the posible Aes with the frequency table stored in @buildFreqs
+     * How? In English language, E is the most common letter
+     * E - 4 positions = A, so the relative most frequent letter less 4 more letter should be the A in this string
+     * Examples:
+     * If E = O, A = K
+     * If E = I, A = E
+     * If E = U, A = Y
+     * Where the As letters of every substring should be the key value for the message
+     */
+    let possibleAes = buildFreqs.map(el => {
+        const relativeA = findRelativeTo(el, -4, base);
+        return relativeA;
+    }).filter(el => el);
+    return possibleAes.map(data => data[0])[0]; 
+}
 
-    let possibleAes = buildFreqs.filter(el => {
-        // console.log("LOOKING FOR ", el);
-        const relativeE = findRelativeTo(el[0], 4, buildFreqs, letters);
+function getValidL(data){
+    const L = calculateL(data);
+    if (L == 1) throw "LETTERS_GROUPS_ERR: Try changing the size of the groups of letter to find with param --group-by or the key length with param --key-length";
+    return L;
+}
 
-        // console.log("LOOKING FOR ", relativeE, "in");
+const decrypt = (text, key, base) => {
+    let cont = 0;
+    return text.split('').reduce(
+        (decText, letter) => {
+            const keyPos = cont % key.length;
+            let position = base.indexOf(letter.toUpperCase()) -  base.indexOf(key[keyPos]);
+            position = (position < 0) ? base.length + position : position;
+            cont++;
+            return decText + base[position];
+        }, ''
+    )
+}
 
-        const relativeO = findRelativeTo(relativeE[0], 11, buildFreqs, letters);
-        
-        if(relativeE[1] > 0 && 
-            relativeO[1] > 0 &&
-            relativeE[1] <= el[1] && 
-            relativeO[1] <= el[1]) {
-            return el;
+const fixText = (textWithSpaces, textWithoutSpaces) => {
+    let cont = -1;
+    return textWithSpaces.split('').map(
+        (letter) => {
+            if (letter == ' ') 
+                return ' ';
+            cont++;
+            return textWithoutSpaces[cont];
         }
-    });
-
-
-    possibleAes = possibleAes.map(data => data[0]); 
-    return possibleAes;
+    ).join('');
 }
 
-
-function getValidL(input){
-    let size = 3;
-    while (true){
-        const data = calculateDistances(
-            auxInput,
-            getRepeatedSubStrings(input, size)
-        );
-        const L = calculateL(data);
-
-        if(L && L > 1) return L;
-        else size++;
+function main(input, data){
+    let { groupBy, keyLength, key } = data || "";
+    const auxInput = input.replace(/ /g, '');
+    if(yargs['key'] || key){
+        const decryptedTextWithoutSpaces = decrypt(auxInput, (yargs['key'] || key).toUpperCase().split(''), letters);
+        const decryptedText = fixText(input, decryptedTextWithoutSpaces);
+        console.log("Decrypted text: \n", decryptedText);
+        process.exit();
     }
-}
+    const repeatedSubstrings = calculateDistances(
+        auxInput,
+        getRepeatedSubStrings(input, groupBy || stringSize)
+    );
+    const possibleKeyLength = yargs['key-length'] || getValidL(repeatedSubstrings.map(el => el.distance));
+    const subTexts = findCs(auxInput, possibleKeyLength);
+    const possibleKey = subTexts.reduce(
+        (arr, C) => {
+            arr.push(getSecret(getFreqs(C), letters))
+            return arr; 
+        },
+            []
+    ).join('');
+    const decryptedTextWithoutSpaces = decrypt(auxInput, possibleKey.split(''), letters);
+    const decryptedText = fixText(input, decryptedTextWithoutSpaces);
+    const dataJSON = {
+        text: input,
+        repeatedSubstrings,
+        possibleKeyLength,
+        subTexts,
+        possibleKey,
+        decryptedText
+    }
+    console.log(dataJSON);
+    rl.close();
+    process.exit();
+};
 
-const getAllPossibleKeys = (possibleAes) => {
-    console.log("COMBINING ", possibleAes,"...");
-    let combinations =  possibleAes.reduce((a, b) => a.reduce((r, v) => r.concat(b.map(w => [].concat(v, w))), []));
-    combinations = [...new Set(combinations.map(el => JSON.stringify(el)))];
-    console.log(combinations);
-    combinations = combinations.filter(el => el.includes('A'));
-}
+rl.question('Insert text to decrypt: ', input => main(input));
 
+module.exports = main;
 
-
-const L = getValidL(auxInput);
-
-
-const possibleAes = findCs(auxInput, L).reduce(
-    (arr, C) => {
-        arr.push(getSecret(getFreqs(C), letters))
-        return arr; 
-    },
-    []
-);
-
-const combinations = getAllPossibleKeys(possibleAes);
-console.log(combinations);
-// console.log(combinations.find(el => JSON.stringify(el) == JSON.stringify(["R", "A", "U", "L"])));
-
-
-//console.log(math.gcd(135, 48, 189, 39, 114, 33));
 

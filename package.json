@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mathjs": "^6.2.2"
+    "mathjs": "^6.2.2",
+    "yargs": "^14.0.0"
   }
 }
